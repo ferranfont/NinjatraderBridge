@@ -1,0 +1,12 @@
+...
+protected override void OnStateChange()
+{
+    sw = File.AppendText(path);  // Open the path for writing
+    sw.WriteLine("date" + "open" + "high" + "low" + "close" + "volume");
+    ...
+    sw = File.AppendText(path);  // Open the path for writing
+    sw.WriteLine(Time[0] + " " + Open[0] + " " + High[0] + " " + Low[0] + " " + Close[0] + " " + Volume[0]); // Append a new line to the file
+    
+    sw.Close(); // Close the file to allow future calls to access the file again.
+}
+...
